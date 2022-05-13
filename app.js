@@ -1,5 +1,15 @@
 var jsonData = {"main":[{"name":"a","tags":["a","d","b","c"],"orderedValues":[100,45.67,14.92,82.7],"values":[100,82.7,45.67,14.92],"value":268},{"name":"b","tags":["b","c","a","d"],"orderedValues":[45.67,100,75.29,33.31],"values":[100,75.29,45.67,33.31],"value":404},{"name":"c","tags":["c","b","d","a"],"orderedValues":[14.92,75.29,100,57.43],"values":[100,75.29,57.43,14.92],"value":121},{"name":"d","tags":["d","a","c","b"],"orderedValues":[82.7,33.31,57.43,100],"values":[100,82.7,57.43,33.31],"value":485}],"minValue":121,"maxValue":485,"valuesOrder":[3,1,0,2]}
 $(document).on('ready',function(){
+    var addGraphTitle = `The text input must be a .csv with the format:
+
+    E0_name, E1_name, E2_name, ... En_name 
+    E0_value, E1_value, E2_value, ... En_value 
+    E0_E0_weight, E0_E1_weight, E0_E2_weight ... E0_En_weight  
+    E1_E0_weight, E1_E1_weight, E1_E2_weight ... E1_En_weight  
+    E2_E0_weight, E2_E1_weight, E2_E2_weight ... E2_En_weight  
+    ...
+    En_E0_weight, En_E1_weight, En_E2_weight ... En_En_weight  `;
+    $("#add-graph-btn").attr("title",addGraphTitle);
     var minValue = 0;
     var maxValue = 1;
     var speciallyColoredId = [];
